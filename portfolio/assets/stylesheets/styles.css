@@ -1,0 +1,455 @@
+
+html { scroll-behavior: smooth; }
+
+@font-face{ font-family:tangerine-regular; src: url(../fonts/Tangerine-Regular.ttf); font-weight:normal; }
+@font-face{ font-family:tangerine-bold; src: url(../fonts/Tangerine-Bold.ttf);font-weight:normal; }
+
+@font-face{ font-family:quicksand-regular; src: url(../fonts/Quicksand-Regular.ttf); font-weight:normal; }
+@font-face{ font-family:rubik-medium; src: url(../fonts/Rubik-Medium.ttf);font-weight:normal; }
+@font-face{ font-family:rubik-bold; src: url(../fonts/Rubik-Bold.ttf);font-weight:normal; }
+
+@font-face{ font-family:outfit-regular; src: url(../fonts/Outfit-Regular.ttf);font-weight:normal; }
+
+/** common **/
+:root, html { font: size 18px; }
+body {     
+    font-family: outfit-regular;
+    color:#fff;
+    background-color: #132238;
+}
+a { text-decoration: none; }
+a:hover,
+button:hover,
+button:visited,
+button:focus,
+a.btn:focus,
+a.btn:visited {
+    outline:none;
+    box-shadow:none; 
+    text-decoration: none;
+}
+strong {
+
+}
+p {
+
+}
+main{
+    height: calc(100vh);
+    display: grid;
+    align-items: center;
+}
+header h1{
+    color: #fff;
+    font-size: 50px;
+    font-family:outfit-regular;     
+}
+header h1 span{
+    font-size: 75px;
+    color: #f5415c;
+}
+p.page_bg{
+    background-image: url(../images/body_bg02.jpg);
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    bottom: 0px;
+    left: 0;
+    z-index: -1;
+    opacity: 0.07;
+    margin-bottom: 0;
+}
+.designer-block,
+.developer-block{
+    color: #fff;
+    min-height: 500px;
+    width: 100%;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.designer-block{
+    /* background-color: darkseagreen; */
+    background-color: #1a8b97;
+    border-top-left-radius: 250px;
+    /* border-bottom-left-radius: 50px;    */
+    position: relative;
+    z-index: 1;
+}
+.designer-block:hover::before{
+    background-image: url("../images/hero-icon-bg.svg");
+    content: "";
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    bottom: 0px;
+    left: 0;
+    transform: scale(1);
+    z-index: -1;
+    opacity: 0.2;
+}
+
+.developer-block{
+    /* background-color: goldenrod; */
+    background-color: #aa8fbc;
+    /* border-top-right-radius: 50px; */
+    border-bottom-right-radius: 250px;
+    position: relative;
+    z-index: 1;
+}
+
+.developer-block:hover::before{
+    background-image: url("../images/code02.png");
+    content: "";
+    background-size: cover;    
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    opacity: 0.09;
+    transform: scale(1.7);
+    z-index: -1;
+}
+/* .developer-block::before {    
+    content: "";
+    background-image: url("../images/code02.png");
+    background-size: cover;    
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    opacity: 0.09;
+    transform: scale(1.7);
+    z-index: 0;
+} */
+
+
+.designer-block ul.skillset,
+.developer-block ul.skillset,
+.designer-block:hover p.subtext,
+.developer-block:hover p.subtext{
+    display: none;
+}
+
+.designer-block:hover ul.skillset,
+.developer-block:hover ul.skillset{
+    display: block;
+    padding-left: 0;
+    margin-bottom: 0;
+    min-height: 100px;
+}
+.designer-block ul.skillset li,
+.developer-block ul.skillset li{
+   list-style: none;
+   padding: 5px 10px;
+   display: inline-block;
+   margin: 5px;
+   border: solid 1px #fff;
+   border-radius: 25px;
+}
+.developer-block ul.skillset li span{
+    font-size: 14px;
+}
+.designer-block ul.skillset li{
+    background-color: #1a8b97;
+}
+.developer-block ul.skillset li{
+    background-color: #aa8fbc;
+}
+
+
+.designer-block header h2,
+.developer-block header h2{    
+    color: #fff;
+    padding-bottom: 20px;
+}
+.designer-block header h2{
+    font-family:tangerine-bold;
+    font-size: 150px;
+    line-height: 130px;
+}
+.designer-block p{
+    font-family:tangerine-regular;
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    min-height: 100px;
+}
+.developer-block header h2{    
+    font-family:rubik-medium;
+    font-size: 90px;
+}
+.developer-block p{
+    font-family:quicksand-regular;
+    font-size: 25px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    min-height: 100px;
+}
+.name_container{
+    
+}
+.name_container .greetings{
+    font-size: 30px;
+    margin-bottom: 0;
+}
+.my_works{
+    margin-top: 25px;
+}
+.my_works a{
+    color: #fff;
+    font-size: 30px;
+}
+
+.my_works_btn{
+    position: relative;
+}
+
+.offcanvas-header .btn-close{
+    display: none;
+}
+/* About Me */
+p.btn_aboutme{
+    position: absolute;
+    left: 0;   
+    margin-left: calc(var(--bs-gutter-x) * .5);
+}
+p.btn_aboutme button.show_aboutme{
+    background: transparent !important;
+    border: solid 1px #f5415c;
+    border-radius: 0;
+    padding: 9px 20px;
+    color: #f5415c;
+    font-size: 18px;
+}
+#offcanvas_aboutme.offcanvas.offcanvas-start{
+    width: 75%;
+    top: 5%;
+    bottom: 5%;
+    text-align: left;
+}
+#offcanvas_aboutme.offcanvas .experience_block{
+    background: #fafafa;
+    padding: 25px;
+    text-align: center;
+}
+#offcanvas_aboutme.offcanvas .experience_block p.exp_count{
+    font-size: 75px;
+    color: #ddb72e;
+}
+#offcanvas_aboutme.offcanvas .experience_block p.exp_txt{
+    font-size: 25px;
+}
+
+#offcanvas_aboutme header h2{
+    color: #f5415c;
+    font-size: 30px;
+    font-family: outfit-regular;
+}
+.skill_block ul{
+    padding: 0;
+}
+.skill_block ul li{
+    list-style: none;
+    display: inline-block;
+    border-radius: 35px;
+    padding: 8px 16px;
+    border: solid 1px #428fa1;
+    margin: 7px 5px;
+}
+
+
+/* Showcase Projects starts here */
+.my_works_btn button.show_works{
+    background: #f5415c !important;
+    border: medium none;
+    border-radius: 0;
+    padding: 9px 20px;
+    color: #fff;
+    font-size: 18px;
+}
+.offcanvas {
+    --bs-offcanvas-height: auto;
+    --bs-offcanvas-transition: transform 0.75s ease-in-out;
+    padding: 15px;
+}
+.offcanvas.offcanvas-bottom.show{
+    height: auto;
+   
+}
+.offcanvas-body {   
+    padding-bottom: 0;
+}
+.offcanvas.offcanvas-bottom.show .card{
+    background: #d9f5f0;
+    border: solid 1px #d9f5f0;
+}
+.offcanvas-header {   
+    padding-bottom: 0;
+}
+.my_overview{
+    padding: 20px 0;
+}
+.my_overview p{
+    font-size: 18px;
+}
+.my_overview p span{
+    color: #f5415c;
+}
+p.card-text a{
+    font-family: outfit-regular;
+    text-align: left;   
+    font-size: 18px;
+    margin-bottom: 15px !important;
+    color: #02342a;
+}
+p.card-text a span{
+    font-size: 15px;   
+    color: #f5415c;
+}
+p.reach_me{
+    margin-bottom: 0;
+    font-size: 18px;
+}
+p.reach_me a i.fa{
+    color: #e9485f;
+    font-size: 20px;
+}
+
+@media (max-width: 767.98px) {
+    main {        
+        padding: 15px;
+        padding-top: 20px;
+        margin-bottom: 35px;
+        height: auto;
+    }
+    p.btn_aboutme {
+        position: fixed;
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+        bottom: 0;
+        margin-bottom: 0;
+        background-color: #f5415c;
+        z-index: 9;
+    }
+    p.btn_aboutme button.show_aboutme {
+        width: 100%;
+        padding: 7px 10px;
+        color: #ffffff;
+        font-size: 16px;
+        border-radius: 0;
+        border-top: solid 10px #142339;
+    }
+    .name_container .greetings {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    header h1,
+    header h1 span {
+        font-size: 30px;       
+    }
+    .name_container{
+        margin-bottom: 20px;
+    }
+    .designer-block header h2 { 
+        margin-top: 10px;       
+        font-size: 80px;
+        line-height: 70px;
+        padding-bottom: 0;
+    }
+    .designer-block p {        
+        font-size: 38px;
+        line-height: 40px;       
+        margin-bottom: 0;
+        min-height: 90px;
+    }
+    .designer-block, .developer-block {       
+        min-height: auto;       
+        padding: 15px;
+    }
+    .designer-block {      
+        border-top-left-radius: 100px;       
+    }
+    .designer-block ul.skillset, .developer-block ul.skillset, 
+    .designer-block:hover p.subtext, .developer-block:hover p.subtext {
+        display: block;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .developer-block header h2 {        
+        font-size: 55px;
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+    .developer-block p {      
+        font-size: 19px;
+        line-height: 28px;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        min-height: 75px;
+    }
+    .developer-block {
+        border-bottom-right-radius: 100px;       
+    }
+    .designer-block ul.skillset li, 
+    .developer-block ul.skillset li {       
+        padding: 4px 10px;       
+        margin: 4px;              
+        font-size: 14px;
+    }
+    .offcanvas-header {
+        padding: 0;
+        padding-bottom: 10px;
+    }
+    .offcanvas-header .btn-close {      
+        display: block;
+        border: solid 1px #7f7f7f;
+        width: 10px;
+        height: 10px;
+    }
+    .offcanvas.offcanvas-bottom {       
+        height: 88%;
+    }
+    .offcanvas.offcanvas-bottom.show {
+        max-height: 88%;
+        height: 88%;
+    }
+    .offcanvas.offcanvas-bottom .card-body{
+        padding-bottom: 4px;
+        padding-top: 8px;
+    }
+    p.card-text {        
+        margin-bottom: 5px !important;       
+    }
+    #offcanvas_aboutme.offcanvas.offcanvas-start {
+        width: 95%;    
+    }
+    #offcanvas_aboutme.offcanvas .experience_block {       
+        padding: 15px;        
+    }
+    #offcanvas_aboutme.offcanvas .experience_block p.exp_count {
+        font-size: 50px;       
+    }
+    #offcanvas_aboutme.offcanvas .experience_block p.exp_count {
+        font-size: 40px;       
+        margin-bottom: 0;
+    }
+    #offcanvas_aboutme.offcanvas .experience_block p.exp_txt {
+        font-size: 17px;
+        margin-bottom: 0;
+    }
+    #offcanvas_aboutme.offcanvas .skill_block{
+        display: none;
+    }
+}
