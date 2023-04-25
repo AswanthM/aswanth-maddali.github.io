@@ -63,7 +63,8 @@ p.page_bg{
 .designer-block,
 .developer-block{
     color: #fff;
-    min-height: 500px;
+    min-height: 450px;
+    margin-bottom: 10px;
     width: 100%;
     display: grid;
     align-content: center;
@@ -317,8 +318,7 @@ p.card-text a span{
     font-size: 15px;   
     color: #f5415c;
 }
-p.reach_me{
-    margin-bottom: 0;
+p.reach_me{    
     font-size: 18px;
 }
 p.reach_me a i.fa{
